@@ -56,6 +56,8 @@ test:
 
 about:
   home: https://bytewax.io
+  dev_url: https://github.com/bytewax/bytewax
+  doc_url: https://bytewax.io/docs
   summary: Python Stateful Stream Processing Framework
   license: Apache-2.0
   license_file: LICENSE
