@@ -9,6 +9,10 @@ Package license: Apache-2.0
 
 Summary: Python Stateful Stream Processing Framework
 
+Development: https://github.com/bytewax/bytewax
+
+Documentation: https://bytewax.io/docs
+
 Current build status
 ====================
 
