@@ -1,5 +1,5 @@
 {% set name = "bytewax" %}
-{% set version = "0.16.2" %}
+{% set version = "0.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/bytewax/bytewax/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 993fe70f3a206adc52aae1099c00e14a92ec55387dda4b0cda2b6f6fbf0ed35b
+  sha256: 8369bb584f172b5b0076d1e65f4d727ca2fcb10e25d7bb768d6a9881673080ac
   patches:
     # this patch disable the vendored ssl/gssapi vendored libraries
     # falling back to use the conda installed ones
     - ssl.patch
 
 build:
-  skip: True  # [win]
+  skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
   number: 1
 
