@@ -1,5 +1,5 @@
 {% set name = "bytewax" %}
-{% set version = "0.17.1" %}
+{% set version = "0.18.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/bytewax/bytewax/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f907c3266f8a97ea259a7964d4837c74100e263923294226b6cdb7b48269bed1
+  sha256: 6f1e09c3dbd21a0c68fd41db0beeaa0031fbc65cb8a09de1194ab49ba9445676
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
 
 requirements:
   build:
