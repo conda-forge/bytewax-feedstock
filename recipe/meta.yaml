@@ -33,10 +33,15 @@ requirements:
     - cyrus-sasl
     - perl  # [ win ]
     - protobuf
+    - fastavro
+    - pytest
+    - typing_extensions
     - librdkafka
   run:
     - python
     - protobuf
+    - fastavro
+    - typing_extensions
     - jsonpickle
     - libzlib
     - librdkafka
