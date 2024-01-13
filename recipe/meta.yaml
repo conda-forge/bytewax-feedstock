@@ -1,5 +1,5 @@
 {% set name = "bytewax" %}
-{% set version = "0.17.2" %}
+{% set version = "0.18.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/bytewax/bytewax/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: acf83b61cedf8e77547d226e2bd710ec613d5dae796a127404815e81cb1f7eb6
+  sha256: ef36c2da57765a3600a0d2588c821698f9202e0260941c66e1fa1cf67bf92bf4
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -27,18 +27,23 @@ requirements:
     - make
     - cmake
     - maturin
+    - fastavro
     - jsonpickle
     - libzlib
     - openssl
     - cyrus-sasl
     - perl  # [ win ]
     - protobuf
+    - requests
     - librdkafka
+    - typing-extensions
   run:
     - python
     - protobuf
+    - fastavro
     - jsonpickle
     - libzlib
+    - requests
     - librdkafka
     - python-confluent-kafka
 
@@ -49,7 +54,7 @@ test:
     - examples
   requires:
     - pytest
-    - jsonpickle
+    - typing-extensions
   commands:
     - pytest -vvs ./pytests
 
