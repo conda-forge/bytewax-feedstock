@@ -8,10 +8,6 @@ package:
 source:
   url: https://github.com/bytewax/bytewax/archive/refs/tags/v{{ version }}.tar.gz
   sha256: ef36c2da57765a3600a0d2588c821698f9202e0260941c66e1fa1cf67bf92bf4
-  patches:
-    # this patch disable the vendored ssl/gssapi vendored libraries
-    # falling back to use the conda installed ones
-    - ssl.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
