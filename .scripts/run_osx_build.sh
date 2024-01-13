@@ -31,7 +31,6 @@ mamba update --update-specs --yes --quiet --channel conda-forge --strict-channel
     pip mamba conda-build boa conda-forge-ci-setup=4
 
 
-
 echo -e "\n\nSetting up the condarc and mangling the compiler."
 setup_conda_rc ./ ./recipe ./.ci_support/${CONFIG}.yaml
 
@@ -76,6 +75,10 @@ if [[ "${BUILD_WITH_CONDA_DEBUG:-0}" == 1 ]]; then
     # Drop into an interactive shell
     /bin/bash
 else
+
+    if [[ "${HOST_PLATFORM}" != "${BUILD_PLATFORM}" ]]; then
+        EXTRA_CB_OPTIONS="${EXTRA_CB_OPTIONS:-} --no-test"
+    fi
 
     conda mambabuild ./recipe -m ./.ci_support/${CONFIG}.yaml \
         --suppress-variables ${EXTRA_CB_OPTIONS:-} \
