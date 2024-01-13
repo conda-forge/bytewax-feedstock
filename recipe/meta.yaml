@@ -33,6 +33,7 @@ requirements:
     - cyrus-sasl
     - perl  # [ win ]
     - protobuf
+    - requests
     - librdkafka
     - typing-extensions
   run:
@@ -40,6 +41,7 @@ requirements:
     - protobuf
     - jsonpickle
     - libzlib
+    - requests
     - librdkafka
     - python-confluent-kafka
 
