@@ -1,5 +1,5 @@
 {% set name = "bytewax" %}
-{% set version = "0.16.2" %}
+{% set version = "0.18.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/bytewax/bytewax/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 993fe70f3a206adc52aae1099c00e14a92ec55387dda4b0cda2b6f6fbf0ed35b
+  sha256: ef36c2da57765a3600a0d2588c821698f9202e0260941c66e1fa1cf67bf92bf4
   patches:
     # this patch disable the vendored ssl/gssapi vendored libraries
     # falling back to use the conda installed ones
@@ -37,6 +37,7 @@ requirements:
     - perl  # [ win ]
     - protobuf
     - librdkafka
+    - typing-extensions
   run:
     - python
     - protobuf
@@ -51,6 +52,7 @@ test:
     - examples
   requires:
     - pytest
+    - typing-extensions
   commands:
     - pytest -vvs ./pytests
 
