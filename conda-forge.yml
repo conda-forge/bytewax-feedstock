@@ -4,8 +4,8 @@ build_platform:
   #   Undefined symbols for architecture x86_64:
   #       "_getentropy", referenced from:
   #   ld: symbol(s) not found for architecture x86_64
-  # osx_64: osx_64
-  osx_arm64: osx_64
+  #osx_64: osx_64
+  osx_arm64: osx_arm64
 conda_build:
   error_overlinking: true
 conda_forge_output_validation: true
