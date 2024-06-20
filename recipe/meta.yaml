@@ -55,6 +55,7 @@ test:
   requires:
     - pytest
     - typing-extensions
+    - sybil
   commands:
     - pytest -vvs ./pytests
 
