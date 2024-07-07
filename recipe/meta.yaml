@@ -54,6 +54,8 @@ test:
   requires:
     - pytest
     - typing-extensions
+    - prometheus_client
+    - pytest-benchmark
   commands:
     - pytest -vvs ./pytests
 
