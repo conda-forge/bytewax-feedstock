@@ -1,5 +1,5 @@
 {% set name = "bytewax" %}
-{% set version = "0.18.1" %}
+{% set version = "0.20.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/bytewax/bytewax/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: ef36c2da57765a3600a0d2588c821698f9202e0260941c66e1fa1cf67bf92bf4
+  sha256: ada5f6b76eb97ee36b27d2df68ce4967f63d91800599c9fd7305d7773b9285d0
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -19,6 +19,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
+    - {{ stdlib("c") }}
     - maturin
   host:
     - python
@@ -49,12 +50,13 @@ requirements:
 
 test:
   source_files:
-    - conftest.py
     - pytests
     - examples
   requires:
     - pytest
     - typing-extensions
+    - prometheus_client
+    - pytest-benchmark
   commands:
     - pytest -vvs ./pytests
 
