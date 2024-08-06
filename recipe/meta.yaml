@@ -12,7 +12,8 @@ source:
 build:
   script: {{ PYTHON }} -m pip install . -vv
   number: 1
-  skip: true  # [osx_arm64 and py==310] 
+  skip: true  # [py==310 and osx and arm64]
+
 
 requirements:
   build:
