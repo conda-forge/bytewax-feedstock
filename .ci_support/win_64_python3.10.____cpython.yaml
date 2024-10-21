@@ -7,7 +7,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 librdkafka:
-- '2.4'
+- '2.6'
 openssl:
 - '3'
 perl:
