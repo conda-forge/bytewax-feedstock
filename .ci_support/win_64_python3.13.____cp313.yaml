@@ -7,7 +7,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 librdkafka:
-- '2.4'
+- '2.5'
 openssl:
 - '3'
 perl:
@@ -17,7 +17,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.13.* *_cp313
 rust_compiler:
 - rust
 target_platform:
