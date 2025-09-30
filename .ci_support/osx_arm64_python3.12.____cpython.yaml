@@ -13,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '18'
+- '19'
 librdkafka:
 - '2.6'
 macos_machine:
@@ -30,3 +30,6 @@ rust_compiler:
 - rust
 target_platform:
 - osx-arm64
+zip_keys:
+- - python
+  - channel_sources
